@@ -1,44 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO-DO APP</title>
 </head>
+
 <body>
-<form action="" method="POST" name="todo_app">
+    <form action="#" method="post" name="todoapp">
+        <div>
+            <input name="nameTask" id="nametask" type="text">
+        </div>
 
-<fieldset>
-    <legend>Добавление задачи</legend>
-    <div>
+        <div>
+            <textarea name='descTask'></textarea>
+        </div>
 
-    <div>
-        <label for="nametask">Название задачи</label>
-        <input name="nametask" id="nametask" type="text">
-    </div>
-    <div>
-        <label for="desc">Описание задачи</label>
-        <textarea></textarea>
-    </div>
-    <div>
-        <label for="date">Срок выполнения задачи</label>
-        <input type="datetime-local">
+        <div>
+            <input name='dateTask' type="datetime-local">
+        </div>
+        <button type="submit">Добавить</button>
 
-    </div>
-
-</div>
-</fieldset>
-
-<fieldset>
-    <legend>Участники</legend>
-    <input type="button" value="Добавить частника">
-</fieldset>
-<input type="button" value="Добавить задачу">
-
-
-
-</form>
-    <script src=""></script>
+    </form>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
