@@ -22,5 +22,18 @@ function submitForm(event) {
 
     localStorage.setItem("tasks", JSON.stringify(task));
     tasks.push(task);
+    console.log(tasks);
 }
-console.log(localStorage);
+
+butt.addEventListener("click", redirect)
+function redirect(){
+    window.location.href = "tasks.html";
+}
+
+let tasksToArr = JSON.parse(localStorage.getItem("tasks"));
+console.log(tasksToArr);
+for (let todo in tasksToArr){
+    document.write(tasksToArr[todo]);
+}
+
+
