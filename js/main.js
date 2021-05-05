@@ -25,10 +25,6 @@ function submitForm(event) {
     console.log(tasks);
 }
 
-butt.addEventListener("click", redirect)
-function redirect(){
-    window.location.href = "tasks.html";
-}
 
 let tasksToArr = JSON.parse(localStorage.getItem("tasks"));
 console.log(tasksToArr);
