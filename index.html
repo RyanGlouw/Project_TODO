@@ -5,21 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <title>TO-DO APP</title>
 </head>
 
 <body>
-    <form action="#" method="post" name="todoapp">
+    <form action="#" method="post" name="todoapp" class="todoapp-form">
         <div>
-            <input name="nameTask" id="nametask" type="text">
+            <input name="nameTask" id="nametask" type="text" placeholder="Введите название задачи">
         </div>
 
         <div>
-            <textarea name='descTask'></textarea>
+            <textarea name='descTask' placeholder="Введите описание задачи"></textarea>
         </div>
 
         <div>
             <input name='dateTask' type="datetime-local">
+        </div>
+
+        <div>
+            <input name="addParticipant" type="button" value="Добавить участника">
+
+            <div class="participant-inputs">
+                
+            </div>
+
         </div>
 
         <button id="butt" type="submit">Добавить задачу</button>
