@@ -6,35 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <title>TO-DO APP</title>
 </head>
 
 <body>
-    <form action="#" method="post" name="todoapp" class="todoapp-form">
-        <div>
-            <input name="nameTask" id="nametask" type="text" placeholder="Введите название задачи">
-        </div>
 
-        <div>
-            <textarea name='descTask' placeholder="Введите описание задачи"></textarea>
-        </div>
+    <form action="#" method="post" name="todoapp" class="todoapp-form ">
+        <div class="col-md-10">
+            <div>
+                <label for="nametask">Название задачи</label>
+                <input class="form-control" name="nameTask" id="nametask" type="text" placeholder="Введите название задачи">
 
-        <div>
-            <input name='dateTask' type="datetime-local">
-        </div>
-
-        <div>
-            <input name="addParticipant" type="button" value="Добавить участника">
-
-            <div class="participant-inputs">
-                
             </div>
 
-        </div>
+            <div>
+                <label for="descTask">Описание задачи</label>
+                <textarea class="form-control" name='descTask' placeholder="Введите описание задачи"></textarea>
+            </div>
 
-        <button id="butt" type="submit">Добавить задачу</button>
+            <div>
+                <label for="dateTask">Дата выполнения</label>
+                <input class="form-control" name='dateTask' type="datetime-local">
+            </div>
+
+            <div>
+                <input class="btn btn-warning" name="addParticipant" type="button" value="Добавить участника">
+
+                <div class="participant-inputs ">
+
+                </div>
+
+            </div>
+
+            <button  class="btn btn-warning" id="butt" type="submit">Добавить задачу</button>
 
     </form>
+    </div>
     <script src="js/main.js"></script>
 </body>
 
