@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url("../img/background.jpg");
+  }
+
+  .title {
+    color: ivory;
+    text-align: center;
+  }
+
+#last-page{
+
+  }
+
+  

@@ -21,7 +21,6 @@ function initLocalStorage() {
 
 form.addEventListener("submit", submitForm);
 function submitForm(event) {
-  event.preventDefault();
 
 	const participantInputs = Array.from(form.querySelectorAll('.participant-input'));
 	let arrValueParticipantInputs = participantInputs.map(item => item.value).filter(item => item.length !== 0);
@@ -30,7 +29,7 @@ function submitForm(event) {
     title: taskNameInput.value,
     description: deskInput.value,
     date: dateTask.value,
-		participants: arrValueParticipantInputs
+	participants: arrValueParticipantInputs
   };
 
 	tasks.push(task);
@@ -39,11 +38,11 @@ function submitForm(event) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-let tasksToArr = JSON.parse(localStorage.getItem("tasks"));
-console.log(tasksToArr);
-for (let todo in tasksToArr) {
-  document.write(JSON.stringify(tasksToArr[todo]));
-}
+// let tasksToArr = JSON.parse(localStorage.getItem("tasks"));
+// console.log(tasksToArr);
+// for (let todo in tasksToArr) {
+//   document.write(JSON.stringify(tasksToArr[todo]));
+// }
 
 function generateInputParticipant(domContainer) {
 	const InputParticipantContainer = document.createElement('div');
