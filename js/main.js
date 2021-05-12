@@ -23,6 +23,8 @@ function initLocalStorage() {
 form.addEventListener("submit", submitForm);
 function submitForm(event) {
 
+	event.preventDefault();
+
 	const participantInputs = Array.from(form.querySelectorAll('.participant-input'));
 	let arrValueParticipantInputs = participantInputs.map(item => item.value).filter(item => item.length !== 0);
 
@@ -34,7 +36,7 @@ function submitForm(event) {
   };
 
 	tasks.push(task);
-  console.log(tasks);
+	console.log(tasks);
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
