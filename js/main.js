@@ -6,6 +6,7 @@ let deskInput = form.elements.descTask;
 let dateTask = form.elements.dateTask;
 const addParticipantBtn = form.elements.addParticipant;
 const participantInputs = document.querySelector('.participant-inputs');
+let sumbitBtn = form.querySelector('[type="submit"]');
 
 const tasks = [];
 initLocalStorage();
@@ -73,4 +74,9 @@ addParticipantBtn.addEventListener('click', (e) => {
 	generateInputParticipant(participantInputs);
 });
 
+// let sumbitBtn = form.querySelector('[type="submit"]')
+// sumbitBtn.addEventListener('click', message)
+// function message(event){
+// 	console.log('Добавлено');
+// }
 // generateInputParticipant(participantInputs);
