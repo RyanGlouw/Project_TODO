@@ -5,6 +5,9 @@
 body {
   background-image: url("../img/background.jpg");
 }
+body a{
+  text-decoration: none;
+}
 
 .todoapp-form {
   font-family: 'Itim', cursive;
@@ -59,3 +62,12 @@ header{
   justify-content: flex-end;
   margin-right: 1rem;
 }
+
+#message{
+  font-family: 'Itim', cursive;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #502525;
+}
+

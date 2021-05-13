@@ -4,6 +4,10 @@
 
 body {
   background-image: url("../img/background.jpg");
+  font-family: 'Itim', cursive;
+}
+body a{
+  text-decoration: none;
 }
 
 .title {
@@ -18,25 +22,34 @@ body {
 }
 
 .task__participants-item {
-  border: 1px solid black;
   padding: 8px 5px;
+  border-radius: 1rem;
+  background-color: aqua;
+  color: black  
 }
 
 .tasks {
+  font-size: 1.2rem;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding-left: 0;
+  width: 100%;
+  align-items: center;
 }
 
 .task {
   padding: 10px;
-  background-color: white;
+  background-image: url("../img/Mirage.jpg");
+  color: aliceblue;
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
   z-index: 1;
+  width: 60%;
+  border-radius: 20px;
 }
 
 .task.active::before {
@@ -55,7 +68,19 @@ body {
   margin: 0;
 }
 
+#deleteTasks{
+  display: flex;
+  justify-content: center;
+margin-left: 380px;
+}
+
 .deleteTasks.btn {
   background-color: white;
   border: 1px solid black;
+  
+}
+
+.btn{
+  margin: 10px;
+  font-size: 1.5rem;
 }
