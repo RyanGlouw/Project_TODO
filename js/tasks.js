@@ -14,8 +14,13 @@ function initLocalStorage() {
 }
 
 function printTasks(tasks, container) {
-  for (let i = 0; i < tasks.length; i++) {
-    const taskObj = tasks[i];
+  const copyTasks = JSON.parse(JSON.stringify(tasks));
+  const copyTasksSort = copyTasks.slice()
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  console.log(tasks, 'tasks');
+  console.log(copyTasksSort, 'copyTasksSort');
+
+  for (const taskObj of copyTasksSort) {
     const taskDom = generateTaskDom(taskObj);
     container.append(taskDom);
   }
@@ -27,7 +32,7 @@ function generateTaskDom(task) {
   domTask.innerHTML = `
         <p class="task__title">${task.title}</p>
         <p class="task__description">${task.description}</p>
-        <p class="task__date">${task.date}</p>
+        <p class="task__date">${convertDate(new Date(task.date))}</p>
     `;
   domTask.setAttribute("data-id", task.id);
 
@@ -91,6 +96,16 @@ function deleteTasks(container) {
   }
 
   tasksActive = [];
+}
+
+function convertDate(date) {
+  function pad(s) { return (s < 10) ? '0' + s : s; }
+  const dateLeft = [
+    pad(date.getDate()),
+    pad(date.getMonth()+1),
+    pad(date.getFullYear())
+  ].join('-');
+  return `${dateLeft} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
 
 initLocalStorage();

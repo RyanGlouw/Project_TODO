@@ -50,8 +50,7 @@ label {
 
 input::-webkit-input-placeholder { color:white; }
 
-#next-page {
-  color: aliceblue;
+.next-page {
   width: 300px;
   font-size: 1.5rem;
 }

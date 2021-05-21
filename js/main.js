@@ -1,15 +1,17 @@
 "use strict";
-let form = document.forms.todoapp;
+const form = document.forms.todoapp;
 
-let taskNameInput = form.elements.nameTask;
-let deskInput = form.elements.descTask;
-let dateTask = form.elements.dateTask;
+const taskNameInput = form.elements.nameTask;
+const deskInput = form.elements.descTask;
+const dateTask = form.elements.dateTask;
 const addParticipantBtn = form.elements.addParticipant;
 const participantInputs = document.querySelector(".participant-inputs");
-let sumbitBtn = form.querySelector('[type="submit"]');
+const sumbitBtn = form.querySelector('#butt');
+const messageSuccessDom = document.getElementById("message");
 
 const tasks = [];
 initLocalStorage();
+initFormDate();
 
 function initLocalStorage() {
   if (localStorage.getItem("tasks") !== null) {
@@ -22,9 +24,14 @@ function initLocalStorage() {
   }
 }
 
+function initFormDate() {
+  console.log(convertDateIso(new Date()));
+  dateTask.min = convertDateIso(new Date());
+}
+
 form.addEventListener("submit", submitForm);
 function submitForm(event) {
-  event.preventDefault();
+  event.preventDefault(); // отменяем действие браузера по умолчанию
 
   const participantInputs = Array.from(
     form.querySelectorAll(".participant-input")
@@ -46,9 +53,10 @@ function submitForm(event) {
   };
 
   tasks.push(task);
-  console.log(tasks);
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  messageSuccessDom.innerText = 'Задача успешно добавлена';
 }
 
 function generateUnicalId(arrId) {
@@ -68,6 +76,26 @@ function generateUnicalId(arrId) {
 // for (let todo in tasksToArr) {
 //   document.write(JSON.stringify(tasksToArr[todo]));
 // }
+
+function convertDate(date) {
+  function pad(s) { return (s < 10) ? '0' + s : s; }
+  return [
+    pad(date.getFullYear()),
+    pad(date.getMonth()+1),
+    pad(date.getDate()),
+  ].join('-');
+  // return [pad(date.getDate()), pad(date.getMonth()+1), pad(date.getFullYear())].join('-');
+}
+
+function convertDateIso(date) {
+  function pad(s) { return (s < 10) ? '0' + s : s; }
+  const dateLeft = [
+    pad(date.getFullYear()),
+    pad(date.getMonth()+1),
+    pad(date.getDate()),
+  ].join('-');
+  return `${dateLeft}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+}
 
 function generateInputParticipant(domContainer) {
   const InputParticipantContainer = document.createElement("div");
@@ -95,12 +123,6 @@ function generateInputParticipant(domContainer) {
 addParticipantBtn.addEventListener("click", (e) => {
   generateInputParticipant(participantInputs);
 });
-
-document.getElementById("butt").addEventListener("click", message);
-
-function message(){
-document.getElementById("message").innerHTML = 'Задача успешно добавлена';
-}
 
 // let sumbitBtn = form.querySelector('[type="submit"]')
 // sumbitBtn.addEventListener('click', message)

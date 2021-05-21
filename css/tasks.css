@@ -62,21 +62,18 @@ body a{
   height: 100%;
   background-color: rgba(255, 187, 0, 0.8);
   z-index: -1;
+  border-radius: 20px;
 }
 
 .task p {
   margin: 0;
 }
 
-#deleteTasks{
-  display: flex;
-  justify-content: center;
-margin-left: 380px;
-}
-
 .deleteTasks.btn {
   background-color: white;
   border: 1px solid black;
+  display: block;
+  margin: 0 auto;
   
 }
 
